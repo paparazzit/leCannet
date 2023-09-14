@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+$fnt-main: "Montserrat", sans-serif;
+$blc: #101010;
+$gray: #363636;
+$accent: #f08400;
+$white: #ffffff;
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+@keyframes apear {
+	from {
+		opacity: 0%;
+		scale: 0.2;
+	}
+	to {
+		scale: 1;
+		opacity: 100%;
+	}
+}
+body {
+	background-color: black;
+	font-family: $fnt-main;
+
+	background: url("/assets/fox_bg_lg.jpg");
+	background-size: cover;
+	background-position: center 20%;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	min-height: 100vh;
+}
+
+nav {
+	flex: 0 0 100%;
+	width: 100%;
+	padding: 20px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-start;
+	background-color: rgba(0, 0, 0, 0.649);
+	.logo {
+		width: 250px;
+		img {
+			width: 100%;
+		}
+	}
+	@media (max-width: 500px) {
+		.logo {
+			width: 180px;
+		}
+	}
+	@media (max-width: 400px) {
+		.logo {
+			width: 150px;
+		}
+	}
+}
+
+.content {
+	margin: 2em 0;
+	flex: 0 0 100%;
+	width: 100%;
+}
+.container {
+	width: 90%;
+	margin: 0 auto 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	opacity: 0;
+	animation: apear 1s ease-in-out forwards 1.5s;
+	@media (max-width: 500px) {
+		width: 95%;
+	}
+}
+
+.text-content {
+	text-align: center;
+
+	padding: 40px 20px;
+	box-shadow: 3px 3px 5px black;
+	background-color: #10101064;
+	border-radius: 4px;
+
+	h2 {
+		font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+		color: $accent;
+		&:nth-child(2) {
+			color: $white;
+			margin-top: 1.5rem;
+			font-size: clamp(1.2rem, 1.04rem + 0.8vw, 2rem);
+		}
+	}
+	.btn {
+		margin-top: 1.5rem;
+		font-size: 1rem;
+		text-transform: uppercase;
+		padding: 0.3em 3em;
+		display: inline-block;
+		background-color: $accent;
+		color: $white;
+		border-radius: 4px;
+		font-weight: bold;
+		line-height: 2;
+	}
+	@media (max-width: 500px) {
+		.btn {
+			font-size: 0.8rem;
+		}
+	}
+}
+
+iframe {
+	margin-top: 3vw;
+
+	@media (max-width: 500px) {
+		width: 100%;
+		margin: 40px auto 0;
+		min-height: 200px;
+	}
+}
+footer {
+	background-color: $blc;
+	flex: 0 0 100%;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	color: $white;
+	margin-top: 40px;
+	align-self: flex-end;
+	font-size: clamp(0.8rem, 0.72rem + 0.4vw, 1.2rem);
+	& * {
+		display: block;
+	}
+	a {
+		color: $white;
+		margin-bottom: 1rem;
+		font-weight: bold;
+	}
+}
